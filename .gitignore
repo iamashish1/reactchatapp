@@ -1,0 +1,87 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Expo
+.expo/
+.expo-shared/
+
+# Testing
+/coverage
+
+# Production
+/.next
+/out
+build/
+/dist/
+
+# Metro
+# https://facebook.github.io/metro/docs/en/configuration
+/metro.config.js
+/metro.config.local.js
+/metro.config.local
+
+# Miscellaneous
+.DS_Store
+.env
+.env.local
+.env.*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# React Native
+# Ignore bundling output
+*.bundle
+
+# Android
+*.apk
+*.ap_
+
+# iOS
+*.xcworkspace
+*.xcuserdata
+*.lock
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcodeproj/
+*.xcuserstate
+*.hmap
+
+# Pods
+ios/Pods/
+ios/Podfile.lock
+
+# macOS
+# General macOS exclusions
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS Trash folder which might appear on any volume
+.Trashes
+
+# Temporary files
+*.swp
+*.swo
+*.swn
+*.tmp
+*.temp
+
+# Logs
+logs
+*.log
+
+# Generated files
+npm-debug.log
+yarn-debug.log
+lerna-debug.log
+lerna-debug.log.*
+
+# Expo specific
+/.expo/web/cache
+/.expo/web/dist
