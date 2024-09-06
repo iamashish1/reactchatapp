@@ -78,6 +78,7 @@ export default function ChatDetailScreen({ route,navigation }) {
         });
 
         await updateDoc(doc(db, 'chats', chatId), {
+          lastMessageSenderId: auth.currentUser.uid,
           lastMessage: newMessage,
           lastMessageTimestamp: Timestamp.now()
         });

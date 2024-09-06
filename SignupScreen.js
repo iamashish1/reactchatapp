@@ -7,8 +7,10 @@ import { setDoc, doc } from 'firebase/firestore';
 import { handleException } from './firebase/FirebaseException';
 import { authStyle } from './styles/AuthStyle';
 import { db } from './firebase/Firebase';
+import * as Notifications from 'expo-notifications';
 
 import { showToastWithGravityAndOffset } from './Toast';
+
 
 export default function SignupScreen({ navigation }) {
     const [email, setEmail] = useState('');
@@ -17,6 +19,9 @@ export default function SignupScreen({ navigation }) {
 
     const handleSignup = async () => {
         try {
+          const { status } = await Notifications.requestPermissionsAsync();
+console.log(status)
+           const token = (await Notifications.getDevicePushTokenAsync()).data;
           const userCredential = await createUserWithEmailAndPassword(auth, email, password);
           const user = userCredential.user;
           console.log(user)
@@ -36,6 +41,7 @@ export default function SignupScreen({ navigation }) {
             name: user.displayName || fullName,  
             phoneNumber: user.phoneNumber || "",  
             userId: user.uid,
+            deviceTokens:[token]
           };
       
           // Add user data to Firestore
